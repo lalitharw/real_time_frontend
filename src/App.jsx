@@ -14,10 +14,7 @@ function App() {
   }
 
   const login = () => { 
-     axios.post(`${process.env.BASE_URL}auth/login`,{
-      email:email,
-      password:password
-    }).then(response => {
+     axios.post(`${process.env.BASE_URL}auth/login`,credentials).then(response => {
       if(response && response.success === true){
         localStorage.setItem("access-token",response.token)
       }
